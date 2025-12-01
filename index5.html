@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./styledis.css" />
+    <link rel="stylesheet" href="./normalize.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Google Font: Poppins -->
+    <!-- English: Poppins | Arabic: Cairo -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Cairo:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="Change-seting fixed w-52 h-screen -left-52 top-0 z-10">
+      <span
+        class="setting absolute -right-10 top-24 py-2 px-3 cursor-pointer bg-[#932a18]"
+        ><i class="fa-solid fa-gear fa-spin text-white"></i
+      ></span>
+      <div
+        class="colors w-44 p-5 text-center my-5 mx-auto rounded-lg bg-[#932a18]"
+      >
+        <h4 class="text-xl text-white">Font Colors</h4>
+        <ul class="menu-color list-none flex justify-center text-center">
+          <li
+            class="active w-6 h-6 rounded-full mt-5 ml-2 cursor-pointer opacity-30 bg-[#932a18]"
+            data-color="#932a18"
+          ></li>
+          <li
+            class="w-6 h-6 rounded-full mt-5 ml-2 cursor-pointer opacity-30 bg-[#4C5A6A]"
+            data-color="#4C5A6A"
+          ></li>
+          <li
+            class="w-6 h-6 rounded-full mt-5 ml-2 cursor-pointer opacity-30 bg-[#5F6F52]"
+            data-color="#5F6F52"
+          ></li>
+          <li
+            class="w-6 h-6 rounded-full mt-5 ml-2 cursor-pointer opacity-30 bg-[#4A3530]"
+            data-color="#4A3530"
+          ></li>
+        </ul>
+      </div>
+      <div
+        class="backgrond-random w-44 p-5 text-center my-5 mx-auto rounded-lg transition duration-500 bg-[#932a18]"
+      >
+        <h4 class="text-white mb-5">Random Background</h4>
+        <ul class="list-none flex justify-center text-center gap-3">
+          <li
+            data-ground="yes"
+            class="yes active bg-black text-slate-50 py-1 px-3 cursor-pointer opacity-50"
+          >
+            Yes
+          </li>
+          <li
+            data-ground="no"
+            class="no bg-black text-slate-50 py-1 px-3 cursor-pointer opacity-50"
+          >
+            No
+          </li>
+        </ul>
+      </div>
+      <div
+        class="bullets-setting w-44 p-5 text-center my-5 mx-auto rounded-lg transition duration-500 bg-[#932a18]"
+      >
+        <h4 class="text-white mb-5">Bullets Option</h4>
+        <ul class="list-none flex justify-center text-center gap-3">
+          <li
+            data-option="yes"
+            class="yes active bg-black text-slate-50 py-1 px-3 cursor-pointer opacity-50"
+          >
+            Yes
+          </li>
+          <li
+            data-option="no"
+            class="no bg-black text-slate-50 py-1 px-3 cursor-pointer opacity-50"
+          >
+            No
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="bullets-option">
+      <div class="bullet" data-section=".about-us">
+        <div class="text-bullet">About Us</div>
+      </div>
+      <div class="bullet" data-section=".skills">
+        <div class="text-bullet">Our Skills</div>
+      </div>
+      <div class="bullet" data-section=".Our-Gallery">
+        <div class="text-bullet">Our Gallery</div>
+      </div>
+      <div class="bullet" data-section=".Timeline">
+        <div class="text-bullet">Timeline</div>
+      </div>
+    </div>
+    <header class="landing-header bg-[url(./imag.jph/04.jpeg)]">
+      <div class="overflow"></div>
+      <nav class="header-nav">
+        <div class="menu"><i class="fa-solid fa-bars"></i></div>
+        <div class="logo"><i class="fa-solid fa-star"></i></div>
+        <ul class="links">
+          <li><a href="">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#our-gallery">Our Gallery</a></li>
+          <li><a href="#timeline">Timeline</a></li>
+        </ul>
+      </nav>
+      <div id="home" class="Text-about-us">
+        <h1>Welcome To We Website</h1>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur,
+          magni officiis modi porro nemo optio ut debitis rem illo laborum
+          labore. Vel voluptatibus sunt aspernatur officiis, repudiandae minima
+          autem! Magnam!
+        </p>
+      </div>
+    </header>
+    <section id="about" class="about-us">
+      <div class="max-container">
+        <section class="information">
+          <div class="info">
+            <h2>About Us</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
+              excepturi dolore rem eligendi. Dignissimos, facere. Distinctio
+              doloremque quisquam doloribus ipsam odio repellat excepturi,
+              perferendis veniam quis praesentium nobis nesciunt minus?
+            </p>
+          </div>
+          <div class="image">
+            <img src="./imag.jph/07.jpeg" alt="" />
+          </div>
+        </section>
+      </div>
+    </section>
+    <section id="skills" class="skills">
+      <h1 class="Heading">Our Skills</h1>
+      <div class="max-container">
+        <div class="box-skill">
+          <div class="name-skill">HTML</div>
+          <div class="skill-progress">
+            <span data-progress="80%"></span>
+          </div>
+        </div>
+        <div class="box-skill">
+          <div class="name-skill">CSS</div>
+          <div class="skill-progress">
+            <span data-progress="70%"></span>
+          </div>
+        </div>
+        <div class="box-skill">
+          <div class="name-skill">JAVASCRIPT</div>
+          <div class="skill-progress">
+            <span data-progress="90%"></span>
+          </div>
+        </div>
+        <div class="box-skill">
+          <div class="name-skill">REACT.JS</div>
+          <div class="skill-progress">
+            <span data-progress="80%"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="our-gallery" class="Our-Gallery">
+      <h1 class="Heading">Our Gallery</h1>
+      <div class="max-container">
+        <div class="Gallery">
+          <div class="box-photo">
+            <img src="./imag.jph/ourGallery1.jpg" alt="First Photo" />
+          </div>
+          <div class="box-photo">
+            <img src="./imag.jph/ourGallery2.jpg" alt="First Photo" />
+          </div>
+          <div class="box-photo">
+            <img src="./imag.jph/ourGallery3.jpg" alt="First Photo" />
+          </div>
+          <div class="box-photo">
+            <img src="./imag.jph/ourGallery4.jpg" alt="First Photo" />
+          </div>
+          <div class="box-photo">
+            <img src="./imag.jph/ourGallery5.jpg" alt="First Photo" />
+          </div>
+          <div class="box-photo">
+            <img src="./imag.jph/ourGallery6.jpg" alt="First Photo" />
+          </div>
+          <div class="box-photo">
+            <img src="./imag.jph/ourGallery7.jpg" alt="First Photo" />
+          </div>
+          <div class="box-photo">
+            <img src="./imag.jph/ourGallery8.jpg" alt="First Photo" />
+          </div>
+          <div class="box-photo">
+            <img src="./imag.jph/ourGallery9.jpg" alt="First Photo" />
+          </div>
+          <div class="box-photo">
+            <img src="./imag.jph/ourGallery10.jpg" alt="First Photo" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <h1 class="Heading mt-20 bg-[#eeeeeeb2] m-0 p-5 text-[80px]">Timeline</h1>
+    <section id="timeline" class="Timeline">
+      <div class="max-container">
+        <div class="section-massege">
+          <div class="All-Text">
+            <h1 class="Data">2018</h1>
+            <div class="massge">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad,
+              cumque reiciendis. Ipsa odit impedit necessitatibus corporis, eos
+              enim quo iusto sit pariatur dolorum odio, labore deserunt eaque
+              quos illo ex?
+            </div>
+            <div class="empty"></div>
+          </div>
+        </div>
+        <div class="section-massege">
+          <div class="All-Text">
+            <h1 class="Data">2022</h1>
+            <div class="massge">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad,
+              cumque reiciendis. Ipsa odit impedit necessitatibus corporis, eos
+              enim quo iusto sit pariatur dolorum odio, labore deserunt eaque
+              quos illo ex?
+            </div>
+            <div class="messege2">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+              atque corporis vero, temporibus minima nobis nam animi modi error,
+              eum repudiandae aliquam ad unde. Numquam eius quasi unde ab iure.
+            </div>
+          </div>
+        </div>
+        <div class="section-massege">
+          <div class="All-Text">
+            <h1 class="Data">2025</h1>
+            <div class="massge">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad,
+              cumque reiciendis. Ipsa odit impedit necessitatibus corporis, eos
+              enim quo iusto sit pariatur dolorum odio, labore deserunt eaque
+              quos illo ex?
+            </div>
+            <div class="messege2">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod rem
+              aliquam quasi, ratione rerum eos hic maiores doloribus explicabo.
+              Doloribus a quam itaque omnis eos quo accusantium cumque labore
+              odit?
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-section links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#our-gallery">Gallery</a></li>
+            <li><a href="#timeline">Timeline</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section contact">
+          <h4>Contact Info</h4>
+          <p>123 Main Street, City, Country</p>
+          <p>Email: info@we-website.com</p>
+          <p>Phone: +00 123 456 7890</p>
+        </div>
+
+        <div class="footer-section about">
+          <h4>About "We Website"</h4>
+          <p>
+            We strive to provide the best user experience and high-quality
+            content tailored to your needs.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 We Website. All Rights Reserved.</p>
+      </div>
+    </footer>
+    <script src="./javadis.js"></script>
+  </body>
+</html>

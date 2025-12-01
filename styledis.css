@@ -1,0 +1,674 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --Main-Color--: #932a18;
+  --padding-top--: 100px;
+  --padding-bottom--: 100px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: all 0.5s;
+}
+
+/* ==============================
+    Change Setting Panel & Options
+============================== */
+.Change-seting {
+  background-color: #932a1894;
+}
+.Change-seting.open {
+  left: 0px;
+}
+
+.colors .menu-color li {
+  border: 0.2px solid white;
+}
+.colors .menu-color .active,
+.backgrond-random ul .active,
+.bullets-setting ul .active {
+  opacity: 1;
+}
+
+/* ==============================
+    Landing Header
+============================== */
+.landing-header {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  position: relative;
+}
+.overflow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: #00000000;
+  z-index: 1;
+}
+.max-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ---------- Header Nav ---------- */
+.header-nav {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  background-color: #932a1834;
+  padding: 0 40px;
+  position: relative;
+  z-index: 2;
+}
+.header-nav .logo {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-left: 50px;
+}
+.header-nav .logo i {
+  font-size: 35px;
+  color: var(--Main-Color--);
+}
+.header-nav .links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  gap: 30px;
+}
+.menu {
+  display: none;
+}
+.header-nav .links li {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  cursor: pointer;
+}
+.header-nav .links li a {
+  text-decoration: none;
+  color: var(--Main-Color--);
+  font-weight: 600;
+  font-size: 18px;
+  transition: 0.3s;
+  padding: 0 15px;
+  opacity: 0.5;
+}
+.header-nav .links li:hover {
+  background-color: #932a1877;
+  color: #fff;
+}
+.header-nav .links li:hover a {
+  opacity: 1;
+  font-size: 25px;
+}
+
+/* ==============================
+    Text About Us
+============================== */
+.Text-about-us {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  text-align: center;
+  z-index: 2;
+}
+.Text-about-us h1 {
+  color: var(--Main-Color--);
+  font-weight: bold;
+  font-size: 50px;
+}
+.Text-about-us p {
+  color: var(--Main-Color--);
+  font-size: 19px;
+  line-height: 1.7;
+}
+
+/* ==============================
+    Sections (About Us, Skills, Gallery, Timeline) Headings & Padding
+============================== */
+.about-us,
+.Our-Gallery {
+  padding-top: var(--padding-top--);
+  padding-bottom: var(--padding-bottom--);
+  background-color: white; /* تم دمج هذا ليقلل التكرار في الأقسام البيضاء */
+}
+.skills,
+.Timeline {
+  background-color: #eeeeeeb2;
+  padding-top: var(--padding-top--);
+  padding-bottom: var(--padding-bottom--);
+  position: relative; /* لـ Timeline */
+}
+.Heading {
+  text-align: center;
+  color: var(--Main-Color--);
+  margin-top: -30px;
+  margin-bottom: 40px;
+  font-size: 40px;
+}
+
+/* ==============================
+    About Us Section
+============================== */
+.about-us .max-container .information {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 100px;
+}
+.about-us .max-container .info {
+  flex: 1;
+  padding-left: 20px;
+}
+.about-us .max-container h2 {
+  color: var(--Main-Color--);
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+.about-us .max-container p {
+  color: var(--Main-Color--);
+  line-height: 1.7;
+  max-width: 550px;
+}
+.about-us .max-container .image {
+  flex: 1;
+  text-align: right;
+}
+.about-us .max-container .image img {
+  max-width: 100%;
+  width: 400px;
+  height: 300px;
+  object-fit: cover;
+}
+
+/* ==============================
+    Skills Section
+============================== */
+.skills .box-skill {
+  display: flex;
+  background-color: white;
+  padding: 15px;
+  text-align: center;
+  max-width: calc(100% - 30px);
+  margin: 0 auto 10px;
+}
+.skills .box-skill .name-skill {
+  width: 140px;
+  color: var(--Main-Color--);
+  font-weight: bold;
+  line-height: 30px;
+}
+.skills .box-skill .skill-progress {
+  width: 100%;
+  background-color: #932a1827;
+  height: 30px;
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.skills .box-skill .skill-progress span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background-color: var(--Main-Color--);
+  transition: all 1s;
+}
+
+/* ==============================
+    Gallery Section
+============================== */
+.Our-Gallery .Gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  text-align: center;
+}
+.Our-Gallery .Gallery .box-photo {
+  overflow: hidden;
+  cursor: pointer;
+}
+.Our-Gallery img {
+  max-width: 250px;
+  width: 250px;
+  height: 150px;
+  object-fit: cover;
+  padding: 3px;
+  background-color: #f6f6f6;
+  border: 1px solid #ccc;
+}
+.overflowForBox {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 10000;
+  background-color: rgba(0, 0, 0, 0.452);
+}
+.TheBoxOverlay {
+  position: fixed;
+  max-width: 600px;
+  max-height: 400px;
+  text-align: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10001;
+  background-color: #f6f6f6;
+  border: 2px solid #ccc;
+  padding: 0 5px;
+}
+.TheBoxOverlay h4 {
+  font-size: 20px;
+  padding: 10px 0;
+  color: var(--Main-Color--);
+}
+.TheBoxOverlay span {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: var(--Main-Color--);
+  right: -15px;
+  top: -15px;
+  border-radius: 50%;
+  color: white;
+  line-height: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.TheBoxOverlay img {
+  max-width: 500px;
+  max-height: 300px;
+}
+
+/* ==============================
+    Timeline Section
+============================== */
+.Timeline::before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: calc(100% - 60px);
+  background-color: var(--Main-Color--);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.Timeline .All-Text {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+.Timeline .All-Text .Data {
+  position: absolute;
+  left: 50%;
+  top: -50px;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  font-size: 20px;
+  background-color: var(--Main-Color--);
+  border-radius: 6px;
+  padding: 3px 6px;
+  color: white;
+}
+.Timeline h1 {
+  margin-top: 10px;
+}
+/* دمج تنسيق Massge و Messege2 (الخصائص المشتركة) */
+.Timeline .All-Text .massge,
+.Timeline .All-Text .messege2 {
+  flex: 1;
+  background-color: white;
+  padding: 20px;
+  border-radius: 6px;
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--Main-Color--);
+  position: relative;
+  max-height: 180px;
+}
+/* الخصائص الخاصة */
+.Timeline .All-Text .massge {
+  margin-right: 20px;
+  margin-top: -10px;
+}
+.Timeline .All-Text .messege2 {
+  margin-left: 20px;
+  margin-top: 200px;
+}
+
+/* دمج المربعات الدائرية (before) */
+.Timeline .All-Text .massge::before,
+.Timeline .All-Text .messege2::before {
+  position: absolute;
+  content: "";
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: white;
+  border: 2px solid var(--Main-Color--);
+  top: 11px;
+}
+.Timeline .All-Text .massge::before {
+  right: -28px;
+}
+.Timeline .All-Text .messege2::before {
+  left: -28px;
+}
+
+/* دمج الأسهم (after) */
+.Timeline .All-Text .massge::after,
+.Timeline .All-Text .messege2::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  border-width: 8px;
+  border-style: solid;
+  top: 11px;
+}
+.Timeline .All-Text .massge::after {
+  border-color: transparent transparent transparent white;
+  right: -16px;
+}
+.Timeline .All-Text .messege2::after {
+  border-color: transparent white transparent transparent;
+  left: -16px;
+}
+.Timeline .All-Text .empty {
+  flex: 1;
+  margin-left: 20px;
+  padding: 20px;
+  margin-top: 200px;
+}
+.section-massege {
+  margin-bottom: 70px;
+}
+
+/* ==============================
+    Bullets Option
+============================== */
+.bullets-option {
+  position: fixed;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2000;
+}
+.bullets-option .bullet {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  background-color: white;
+  border: 2px solid var(--Main-Color--);
+  cursor: pointer;
+}
+.bullets-option .bullet:hover .text-bullet {
+  display: block;
+}
+.bullets-option .bullet .text-bullet {
+  position: absolute;
+  right: 28px;
+  width: 100px;
+  background-color: var(--Main-Color--);
+  color: white;
+  border-radius: 4px;
+  padding: 4px 8px;
+  top: -5px;
+  pointer-events: none;
+  cursor: default;
+  display: none;
+}
+.bullets-option .bullet .text-bullet::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent transparent transparent var(--Main-Color--);
+  right: -16px;
+}
+
+/* ==============================
+    Footer Styling
+============================== */
+.site-footer {
+  background-color: #333;
+  color: #fff;
+  padding: 30px 20px 10px;
+  font-family: Arial, sans-serif;
+}
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  padding-bottom: 20px;
+}
+.footer-section {
+  width: 30%;
+  margin-bottom: 20px;
+}
+.footer-section h4 {
+  font-size: 1.1em;
+  margin-bottom: 15px;
+  color: #ffd700;
+  border-bottom: 2px solid #555;
+  padding-bottom: 5px;
+}
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-section ul li a {
+  color: #ccc;
+  text-decoration: none;
+  line-height: 1.8;
+  transition: color 0.3s;
+}
+.footer-section ul li a:hover {
+  color: #ffd700;
+}
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #555;
+  padding-top: 10px;
+  font-size: 0.9em;
+  color: #aaa;
+}
+
+/* ==============================
+    Responsive Design
+============================== */
+@media (max-width: 992px) {
+  .header-nav {
+    height: 100px;
+    flex-direction: column;
+  }
+  .header-nav .logo {
+    width: fit-content;
+    margin: 10px auto;
+  }
+  .header-nav .links {
+    margin-left: 20px;
+    margin-bottom: 5px;
+  }
+  .header-nav .links li:hover a {
+    width: 170px;
+  }
+  .Text-about-us {
+    width: 300px;
+    margin-top: 60px;
+  }
+  .about-us .max-container {
+    max-width: 990px;
+  }
+  .about-us .max-container .information {
+    flex-direction: column;
+    text-align: center;
+  }
+  .about-us .max-container h1 {
+    margin-bottom: 10px;
+  }
+  .about-us .max-container p {
+    max-width: 500px;
+    margin: 0 auto 20px;
+  }
+  .skills .box-skill {
+    max-width: calc(100% - 40px);
+    margin: 0 auto;
+  }
+  .landing-header {
+    background-image: url(./imag.jph/01.jpeg);
+  }
+  .TheBoxOverlay {
+    max-width: 350px;
+  }
+  .TheBoxOverlay img {
+    max-width: 330px;
+    object-fit: cover;
+  }
+  .Timeline .All-Text .massge,
+  .Timeline .All-Text .messege2 {
+    max-height: fit-content;
+  }
+}
+
+@media (max-width: 768px) {
+  /* دمج خصائص .header-nav .links في حالتها العادية و .active */
+  .header-nav .links {
+    flex-direction: column;
+    width: fit-content;
+    background-color: #c9aaa4dc;
+    height: 400px;
+    margin: 0;
+    padding: 20px;
+    position: absolute;
+    right: 0;
+    z-index: 1000;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    transform: translateX(100%);
+    opacity: 0;
+    top: 58px;
+    display: none;
+    border-radius: 6px;
+  }
+  .header-nav .links.active {
+    display: flex;
+    transform: translateX(0);
+    opacity: 1;
+  }
+  .header-nav .links::before {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #c9aaa4dc transparent;
+    right: 22px;
+    top: -19px;
+  }
+  .header-nav .menu {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: var(--Main-Color--);
+  }
+  .header-nav {
+    z-index: 99999;
+  }
+  .Text-about-us {
+    max-width: 300px;
+    margin-top: 110px;
+  }
+  .name-skill {
+    font-size: 13px;
+  }
+  /* Footer responsive for 768px */
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-section {
+    width: 90%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 740px) {
+  .Timeline .All-Text {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  .Timeline {
+    text-align: center;
+  }
+  .Timeline .All-Text h1 {
+    margin-top: 20px;
+  }
+  /* دمج إخفاء عناصر قبل وبعد الرسائل */
+  .Timeline .All-Text .massge::before,
+  .Timeline .All-Text .messege2::before,
+  .Timeline .All-Text .massge::after,
+  .Timeline .All-Text .messege2::after {
+    display: none;
+  }
+  .Timeline .All-Text .massge,
+  .Timeline .All-Text .messege2 {
+    max-width: 300px;
+    max-height: 400px;
+    margin-top: 20px;
+    margin-right: 0;
+    margin-left: 0;
+    font-size: 14px;
+  }
+  .empty {
+    display: none;
+  }
+  .section-massege,
+  .Our-Gallery .Gallery,
+  .Our-Gallery {
+    text-align: center;
+  }
+}
+@media (max-width: 440px) {
+  .Our-Gallery .Gallery,
+  .Our-Gallery {
+    text-align: center;
+  }
+  .box-photo {
+    margin-left: 70px;
+  }
+}
