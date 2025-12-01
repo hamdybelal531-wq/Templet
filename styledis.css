@@ -546,7 +546,7 @@ html {
     margin: 0 auto;
   }
   .landing-header {
-    background-image: url(./imag.jph/01.jpeg);
+    background-image: url("./images/04.jpg");
   }
   .TheBoxOverlay {
     max-width: 350px;

@@ -1,5 +1,5 @@
 let landingback = document.querySelector(".landing-header");
-let backgrounds = ["01.jpeg", "02.jpeg", "03.jpeg", "04.jpeg", "05.jpeg", "06.jpeg"]
+let backgrounds = ["01.jpg", "02.jpg", "03.jpg", "04.jpg", "05.jpg", "06.jpg"];
 
 let colorLocal = localStorage.getItem("color");
 let changcolor = document.querySelectorAll(".menu-color > li");
@@ -11,157 +11,149 @@ let groundlocal = localStorage.getItem("ground");
 let randomback = true;
 let myIntervel;
 if (groundlocal !== null) {
-  [SpanYes, Spanno].forEach(span => {
+  [SpanYes, Spanno].forEach((span) => {
     const isActive = span.dataset.ground === groundlocal;
     span.classList.toggle("active", isActive);
     if (span === SpanYes && isActive) randomback = true;
     if (span === Spanno && isActive) randomback = false;
   });
 }
-if(colorLocal !== null){
-    document.documentElement.style.setProperty("--Main-Color--", colorLocal);
-    changcolor.forEach((e)=>{
-        if(e.dataset.color === colorLocal){
-            e.classList.add("active");
-            
-        }else{
-            
-            e.classList.remove("active");
-        }
-    })
+if (colorLocal !== null) {
+  document.documentElement.style.setProperty("--Main-Color--", colorLocal);
+  changcolor.forEach((e) => {
+    if (e.dataset.color === colorLocal) {
+      e.classList.add("active");
+    } else {
+      e.classList.remove("active");
+    }
+  });
 }
 
 backgroundrandom();
 
-[SpanYes, Spanno].forEach(span => {
+[SpanYes, Spanno].forEach((span) => {
   span.addEventListener("click", () => {
     clearInterval(myIntervel);
     const isYes = span === SpanYes;
     randomback = isYes;
-    
+
     // تعديل الكلاسات
     SpanYes.classList.toggle("active", isYes);
     Spanno.classList.toggle("active", !isYes);
-    
+
     // تخزين القيمة
     localStorage.setItem("ground", span.dataset.ground);
-    
+
     // لو SpanYes اتضغط، شغل backgroundrandom
     if (isYes) backgroundrandom();
   });
 });
 
-
-function backgroundrandom(){
-   myIntervel = setInterval(()=> {
-    if(randomback === true){
-        let random = Math.floor(Math.random() * backgrounds.length);
-        landingback.style.backgroundImage = `url('./imag.jph/${backgrounds[random]}')`;
+function backgroundrandom() {
+  myIntervel = setInterval(() => {
+    if (randomback === true) {
+      let random = Math.floor(Math.random() * backgrounds.length);
+      landingback.style.backgroundImage = `url('./images/${backgrounds[random]}')`;
     }
-},3000);
-}  
+  }, 3000);
+}
 
 let setting = document.querySelector(".setting");
 let Changeseting = document.querySelector(".Change-seting");
 
 setting.addEventListener("click", () => {
-    Changeseting.classList.toggle("open");
+  Changeseting.classList.toggle("open");
 });
 
-
-
-changcolor.forEach((ele)=>{
-    ele.addEventListener("click", (e)=> {
-        changcolor.forEach((e)=>{
-            e.classList.remove("active")
-        })
-    document.documentElement.style.setProperty("--Main-Color--", e.target.dataset.color)
-    e.target.classList.add("active")
-    window.localStorage.setItem("color", e.target.dataset.color )
-    })
-
-})
+changcolor.forEach((ele) => {
+  ele.addEventListener("click", (e) => {
+    changcolor.forEach((e) => {
+      e.classList.remove("active");
+    });
+    document.documentElement.style.setProperty(
+      "--Main-Color--",
+      e.target.dataset.color
+    );
+    e.target.classList.add("active");
+    window.localStorage.setItem("color", e.target.dataset.color);
+  });
+});
 
 let skills = document.querySelector(".skills");
 let skillsSpan = document.querySelectorAll(".skills span");
 
-
-
 const skillsSection = document.querySelector(".skills");
 const spans = document.querySelectorAll(".skill-progress span");
 
-const observer = new IntersectionObserver(entries => {
-entries.forEach(entry => {
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
     if (entry.isIntersecting) {
-    spans.forEach(span => {
+      spans.forEach((span) => {
         span.style.width = span.dataset.progress;
-    });
+      });
 
-    observer.unobserve(skillsSection);
+      observer.unobserve(skillsSection);
     }
-});
+  });
 });
 observer.observe(skillsSection);
 
 let menu = document.querySelector(".menu i");
 let lineks = document.querySelector(".links");
-menu.addEventListener("click", function(){
-lineks.classList.toggle("active");
-})
-document.addEventListener("click", function(e){
-    if(e.target !== lineks && e.target !== menu ){
-        if(lineks.classList.contains("active")){
-            lineks.classList.remove("active");
-        }
+menu.addEventListener("click", function () {
+  lineks.classList.toggle("active");
+});
+document.addEventListener("click", function (e) {
+  if (e.target !== lineks && e.target !== menu) {
+    if (lineks.classList.contains("active")) {
+      lineks.classList.remove("active");
     }
-})
-
+  }
+});
 
 // start our Gallery
 
 let boxPhoto = document.querySelectorAll(".box-photo img");
 
-boxPhoto.forEach((box)=>{
-box.addEventListener("click", function(){
+boxPhoto.forEach((box) => {
+  box.addEventListener("click", function () {
     let overflow = document.createElement("div");
-    overflow.className = "overflowForBox"
+    overflow.className = "overflowForBox";
     document.body.append(overflow);
     let DivImage = document.createElement("div");
-    DivImage.className = "TheBoxOverlay"
+    DivImage.className = "TheBoxOverlay";
     let Image = document.createElement("img");
     Image.src = box.src;
-    if(box.alt !== null){
-        let h4 = document.createElement("h4");
-        h4.innerHTML = box.alt;
-        DivImage.append(h4);
+    if (box.alt !== null) {
+      let h4 = document.createElement("h4");
+      h4.innerHTML = box.alt;
+      DivImage.append(h4);
     }
     DivImage.append(Image);
     document.body.append(DivImage);
 
     let span = document.createElement("span");
-    span.innerHTML = "X"
-    span.className = "closethebox"
+    span.innerHTML = "X";
+    span.className = "closethebox";
     DivImage.append(span);
-
-})
-})
-document.addEventListener("click", function(e){
-if(e.target.classList.contains("closethebox")){
-    e.target.parentElement.remove()
+  });
+});
+document.addEventListener("click", function (e) {
+  if (e.target.classList.contains("closethebox")) {
+    e.target.parentElement.remove();
     document.querySelector(".overflowForBox").remove();
-}
-})
-// end our Gallery 
+  }
+});
+// end our Gallery
 
-// Start logic bullets 
+// Start logic bullets
 let bullets = document.querySelectorAll(".bullets-option .bullet");
 
-bullets.forEach(bullet => {
-bullet.addEventListener("click", function(e){
-document.querySelector(e.target.dataset.section).scrollIntoView();
-})
-
-})
+bullets.forEach((bullet) => {
+  bullet.addEventListener("click", function (e) {
+    document.querySelector(e.target.dataset.section).scrollIntoView();
+  });
+});
 
 // bulllets options
 
@@ -171,27 +163,27 @@ let alloption = document.querySelectorAll(".bullets-setting li");
 let optionlocat = localStorage.getItem("option-setting");
 
 if (optionlocat !== null) {
-    [YesShowoption, dontShowoption].forEach(span => {
-        const isActive = span.dataset.option === optionlocat;
-        span.classList.toggle("active", isActive);
-        if (span === YesShowoption && isActive) document.querySelector(".bullets-option").style.display = "block"  ;
-        if (span === dontShowoption && isActive) document.querySelector(".bullets-option").style.display = "none";
-    });
+  [YesShowoption, dontShowoption].forEach((span) => {
+    const isActive = span.dataset.option === optionlocat;
+    span.classList.toggle("active", isActive);
+    if (span === YesShowoption && isActive)
+      document.querySelector(".bullets-option").style.display = "block";
+    if (span === dontShowoption && isActive)
+      document.querySelector(".bullets-option").style.display = "none";
+  });
 }
 
-[YesShowoption,dontShowoption].forEach(span =>{
-    span.addEventListener("click", (e)=>{
-        
-        const Ayes = e.target === YesShowoption;
-        YesShowoption.classList.toggle("active", Ayes);
-        dontShowoption.classList.toggle("active", !Ayes);  
-        if(Ayes){
-            document.querySelector(".bullets-option").style.display = "block"
-        }else{
-            document.querySelector(".bullets-option").style.display = "none"
-        }
-        localStorage.setItem("option-setting", e.target.dataset.option);
-    })
-})
+[YesShowoption, dontShowoption].forEach((span) => {
+  span.addEventListener("click", (e) => {
+    const Ayes = e.target === YesShowoption;
+    YesShowoption.classList.toggle("active", Ayes);
+    dontShowoption.classList.toggle("active", !Ayes);
+    if (Ayes) {
+      document.querySelector(".bullets-option").style.display = "block";
+    } else {
+      document.querySelector(".bullets-option").style.display = "none";
+    }
+    localStorage.setItem("option-setting", e.target.dataset.option);
+  });
+});
 // bulllets options
-
