@@ -1,5 +1,5 @@
 let landingback = document.querySelector(".landing-header");
-let backgrounds = ["01.jpg", "02.jpg", "03.jpg", "04.jpg", "05.jpg", "06.jpg"];
+let backgrounds = ["01.jpg", "04.jpg", "06.jpg"];
 
 let colorLocal = localStorage.getItem("color");
 let changcolor = document.querySelectorAll(".menu-color > li");
