@@ -37,14 +37,11 @@ backgroundrandom();
     const isYes = span === SpanYes;
     randomback = isYes;
 
-    // تعديل الكلاسات
     SpanYes.classList.toggle("active", isYes);
     Spanno.classList.toggle("active", !isYes);
 
-    // تخزين القيمة
     localStorage.setItem("ground", span.dataset.ground);
 
-    // لو SpanYes اتضغط، شغل backgroundrandom
     if (isYes) backgroundrandom();
   });
 });
@@ -55,7 +52,7 @@ function backgroundrandom() {
       let random = Math.floor(Math.random() * backgrounds.length);
       landingback.style.backgroundImage = `url('./images/${backgrounds[random]}')`;
     }
-  }, 3000);
+  }, 5000);
 }
 
 let setting = document.querySelector(".setting");
