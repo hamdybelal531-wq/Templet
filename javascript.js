@@ -8,7 +8,7 @@ let Spanno = document.querySelector(".backgrond-random .no");
 let liGround = document.querySelectorAll(".backgrond-random > li");
 
 let groundlocal = localStorage.getItem("ground");
-let randomback = true;
+let randomback = false;
 let myIntervel;
 if (groundlocal !== null) {
   [SpanYes, Spanno].forEach((span) => {
